@@ -1,0 +1,20 @@
+{
+  "name": "chatbecode",
+  "version": "1.0.0",
+  "description": "Simple chat app with rooms using socket.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Abdelilah BENGHADDA",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
