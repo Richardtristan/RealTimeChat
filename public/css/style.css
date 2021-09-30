@@ -1,8 +1,27 @@
         #chat-form {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        position: absolute;
+        bottom: 0;
+         
+        left: 0;
+        width: 100%;
+        height: 5%;
+        margin-bottom: 0%;
+
     }
+
+#msg{
+    border: none;
+    height: 200%;
+    margin-bottom: 0;
+    outline: 0;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+
+    
     .body-chat {
         height: 100% !important;
         margin: 0 !important;
@@ -22,17 +41,72 @@
     .chat-container {
         height: auto;
         text-align: center;
-        background: #7025f3
+        background: #162659
         ;
-        opacity: 0.75;
+        color: black;
+        opacity: 0.95;
         flex-direction: column;
         border-radius: 10px;
         grid-area: 2/1/3/4;
         margin-right: 3%;
         margin-left: 3%;
-      
+        position: relative;
+      padding-bottom: 8%;
+      width: auto;
         /*padding-top: 3%;*/
     }
+
+    @media screen and (max-width:800px){
+
+    .chat-form-container{
+        background-color: whitesmoke;
+        margin-bottom: 2%;
+        border-radius: 10px;
+        position: relative;
+        width: 200px;
+        margin-right: 3%;
+        margin-top: 3%;
+        text-align: left;
+        
+    }
+
+    .chat-messages{
+        /* padding-bottom: 15%; */
+        overflow: auto;
+        margin-bottom: 5%;
+        width: 100px;
+        height: 150px;
+        
+    }
+}
+
+    @media screen and (min-width:800px) {
+        
+    
+
+    .chat-form-container{
+        background-color: whitesmoke;
+        margin-bottom: 2%;
+        border-radius: 10px;
+        position: relative;
+        width: 600px;
+        margin-right: 3%;
+        margin-top: 3%;
+        text-align: left;
+        
+    }
+
+    .chat-messages{
+        /* padding-bottom: 15%; */
+        overflow: auto;
+        margin-bottom: 5%;
+        width: 600px;
+        height: 300px;
+        
+        
+    }
+}
+  
 
 .odile{
     display: flex;
@@ -67,11 +141,12 @@
         align-items: stretch;
     
     }
-    input{
+    #password ,#username{
         margin-bottom: 2%;
         margin-top: 2%;
-        width: 60%;
+        width: auto;
         height: auto;
+        
     }
     button{
         margin-bottom: 2%;
@@ -96,15 +171,16 @@
              .btn-grad {
                 margin-top: 2%;
                 margin-bottom: 0;
-                padding: 15px 45px;
+                padding: 5px 20px;
                 text-align: center;
                 text-transform: uppercase;
                 transition: 0.5s;
                 background-size: 200% auto;
                 color: white;
-                box-shadow: 0 0 20px #eee;
+                box-shadow: 0 0 5px #eee;
                 border-radius: 10px;
-                display: block;
+                
+                
               }
     
               .btn-grad:hover {
@@ -127,7 +203,11 @@
             
               .img-logo-chat{
                 width: auto;
-                max-width: 15%;             
+                max-width: 15%;
+                box-shadow: 0 0 3px #eee;             
+                background-color: whitesmoke;
+                border-radius: 5px;
+                margin-top: 15px;
                   
               }
     
@@ -173,11 +253,59 @@
                flex-direction: column;
             justify-content: space-around;
             margin-bottom: 2%;
-            
+           
             border-radius: 10px;
             padding: 3%;
+            color: whitesmoke;
+            /* background-color: rgb(165, 152, 165); */
+        }
+
+
+
+::-webkit-scrollbar {
+    background-color: #2b5876;
+    border-radius: 5px;
 }
 
-.chat-messages{
-    padding-bottom: 15%;
+
+
+
+
+.message{
+    background-color: rgb(206, 192, 255);
+    border-radius: 10px 10px 0 0 ;
+    padding-top: 2%;
+    /* width: 100%; */
 }
+
+.text{
+    padding-bottom: 1%;
+    margin:1% 0 1% 0;
+    color: #162659;
+    width: 500px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+h3 {
+    
+   
+    font-family : 'Gemunu Libre', sans-serif;
+}
+
+.bot{
+    margin-top: 0;
+    
+}
+
+.meta{
+    /* padding-top: 1%;
+    padding-bottom: 1%; */
+    margin:1% 0 1% 0;
+
+}
+
+hr{
+    width: 100%;
+}
+
