@@ -32,7 +32,7 @@
         position:relative;
         display: grid;
         grid-template-columns: 1fr; 
-        grid-template-rows: 0.5fr 2fr 0.5fr;;
+        grid-template-rows: 1fr 2fr 1fr;
         
     }
     h1{
@@ -51,38 +51,53 @@
         margin-right: 3%;
         margin-left: 3%;
         position: relative;
-      padding-bottom: 8%;
-      width: auto;
+        padding-bottom: 8%;
+        width: auto;
         /*padding-top: 3%;*/
     }
 
     @media screen and (max-width:800px){
+        .text{
+            padding-bottom: 1%;
+            margin:1% 0 1% 5px;
+            color: #162659;
+            width: 200px;
+            word-wrap: break-word;
+            text-align: center;
+        }
 
     .chat-form-container{
         background-color: whitesmoke;
-        margin-bottom: 2%;
+        margin: 2%;
         border-radius: 10px;
         position: relative;
         width: 200px;
-        margin-right: 3%;
-        margin-top: 3%;
+
         text-align: left;
+
         
     }
 
     .chat-messages{
         /* padding-bottom: 15%; */
         overflow: auto;
-        margin-bottom: 5%;
-        width: 100px;
-        height: 150px;
+
+        width: 200px;
+
         
     }
 }
 
     @media screen and (min-width:800px) {
-        
-    
+
+        .text{
+            padding-bottom: 1%;
+            margin:1% 0 1% 10px;
+            color: #162659;
+            width: 500px;
+            word-wrap: break-word;
+            text-align: center;
+        }
 
     .chat-form-container{
         background-color: whitesmoke;
@@ -212,7 +227,7 @@
               }
     
 
-                .body-register ,.body-index{
+                .body-register{
                     height: 100% !important;
                     margin: 0 !important;
                     padding: 0 !important;
@@ -222,13 +237,30 @@
                     position:relative;
                     display: grid;
                     grid-template-columns: 1fr 2.1fr 1fr;
-                    grid-template-rows: 0.75fr 1fr 0.75fr;
+                    grid-template-rows: 0.97fr 1fr 0.97fr;
                     gap: 0px 0px;
                     grid-template-areas:
                     ". . ."
                     ". text ."
                     ". . .";
                 }
+        .body-index{
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background-image: url('/img/bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position:relative;
+            display: grid;
+            grid-template-columns: 1fr 2.1fr 1fr;
+            grid-template-rows: 0.85fr 1fr 0.85fr;
+            gap: 0px 0px;
+            grid-template-areas:
+                    ". . ."
+                    ". text ."
+                    ". . .";
+        }
                
             #leave-btn{
                 color: white;
@@ -278,14 +310,7 @@
     /* width: 100%; */
 }
 
-.text{
-    padding-bottom: 1%;
-    margin:1% 0 1% 0;
-    color: #162659;
-    width: 500px;
-    word-wrap: break-word;
-    text-align: center;
-}
+
 
 h3 {
     
@@ -295,13 +320,14 @@ h3 {
 
 .bot{
     margin-top: 0;
+    margin-left: 2%;
     
 }
 
 .meta{
     /* padding-top: 1%;
     padding-bottom: 1%; */
-    margin:1% 0 1% 0;
+    margin:1% 0 1% 1%;
 
 }
 
