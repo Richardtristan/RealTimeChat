@@ -8,16 +8,16 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
         integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-        crossorigin="anonymous"
-    />
+        crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <title>Chat-Becode App</title>
 </head>
-<body>
+<body class="body-register">
 <div class="join-container">
-    <header class="join-header">
-        <h1><i class="fas fa-smile"></i> Register</h1>
-    </header>
+    <img src="img/logo.png" class="img-logo" alt="logo">
     <main class="register-main">
         <form action="index.html">
             <div class="form-control">
@@ -29,6 +29,8 @@
                     placeholder="Enter username..."
                     required
                 />
+            </div>
+            <div class="form-control">
                 <label for="password">Password</label>
                 <input
                     type="text"
