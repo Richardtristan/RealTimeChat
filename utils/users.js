@@ -1,3 +1,5 @@
+
+// This array will hold a list of all the active users that are online using our application
 const users = [];
 
 // Join user to chat
@@ -19,7 +21,7 @@ function userLeave(id) {
     const index = users.findIndex(user => user.id === id);
 
     if (index !== -1) {
-        return users.splice(index, 1)[0]; // return a user from array
+        return users.splice(index, 1)[0]; // remove user from array and return a user removed
     }
 }
 

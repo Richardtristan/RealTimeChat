@@ -1,96 +1,115 @@
+require("dotenv").config();
+
 const path = require('path');
 const http = require('http');
+
 const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+
 const socketio = require('socket.io');
-const formatMessage = require('./utils/messages');
-const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/users');
+
+
+//const logger = require('morgan');
+const cors = require('cors');
+
+// mongo connection
+const mongo = require('../config/mongo.js');
+
+// socket configuration
+const WebSockets = require('../utils/WebSockets.js');
+
+// routes
+const indexRouter = require('../routes/index.js');
+//const userRouter = require('../routes/user.js');
+//const chatRoomRouter = require('../routes/chatRoom.js');
+//const deleteRouter = require('../routes/delete.js');
+
+// controllers
+const user = require('../controllers/user.js');
+
+// models
+const UserModel  = require('../models/User.js');
+
+/** Get port from environment and store in Express. */
+//const TWO_HOURS = 1000 * 60 * 60 * 2;
+const {
+    PORT = 3000,
+    NODE_ENV = 'development',
+
+    SESS_NAME = 'sid',
+    SESS_SECRET = 'ssh!quiet,it)secret!'
+    //SESS_LIFETIME = TWO_HOURS
+} = process.env
+
+const IN_PROD = NODE_ENV === 'production';
+
 
 const app = express();
-const server = http.createServer(app);
-const io = socketio(server);
+app.set("port", PORT);
 
-// Set static folder
-app.use(express.static(path.join(__dirname, 'public')));
+// use session
+app.use( session({
+    name: SESS_NAME,
+    resave : false,
+    saveUninitialized: false,
+    secret: SESS_SECRET,
+    cookie: {
+        //maxAge: SESS_LIFETIME,
+        sameSite: true,
+        secure: IN_PROD
+    }
+}));
 
-const botName = 'Odile Bot ';
+//app.use(express.json());
+app.use(bodyParser.json());
+//app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
-// Run when client connects
-io.on('connection', socket => {
-    // console.log('New WS Connection...');
+// cookie parser middleware
+//app.use(cookieParser());
 
-    socket.on('joinRoom', ({ username, room }) => {
-        const user = userJoin(socket.id, username, room);
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
-        socket.join(user.room);
+app.use("/", indexRouter);
 
-        // Welcome current user
-        // 1- Emit a message to a single client
-        socket.emit(
-            'message',
-            formatMessage(botName, 'Welcome to Chat-Becode!')
-        );
 
-        // Broadcast when a user connects
-        // 2- Emit for all clients excepet client connected : difference between socket.emit
-        socket.broadcast
-            .to(user.room)
-            .emit(
-            'message',
-                formatMessage(botName, `${user.username} has joined the chat`)
-            );
-
-        // Send users and room info
-        io.to(user.room).emit('roomUsers', {
-            room: user.room,
-            users: getRoomUsers(user.room)
-        });
-
-    });
-
-    /* those 2 functions are inside joinRoom socket.on
-    // Welcome current user
-    // 1- Emit a message to a single client
-    socket.emit('message', formatMessage(botName, 'Welcome to Chat-Becode!'));
-
-    // Broadcast when a user connects
-    // 2- Emit for all clients excepet client connected : difference between socket.emit
-    socket.broadcast.emit('message', formatMessage(botName, 'A user has joined the chat'));
-    */
-
-    // 3- send message for all clients
-    //io.emit()
-
-    // Listen for chatMessage
-    socket.on('chatMessage', msg => {
-       //console.log(msg);
-        const user = getCurrentUser(socket.id);
-       // Send message to everybody who connected
-        io.to(user.room).emit('message', formatMessage(user.username, msg));
-    });
-
-    // Run when client disconnect
-    socket.on('disconnect', () => {
-        const user = userLeave(socket.id);
-
-        if(user) {
-            io.to(user.room).emit(
-                'message',
-                formatMessage(botName, `${user.username} has left the chat`)
-            );
-
-            // Send users and room info
-            io.to(user.room).emit('roomUsers', {
-                room: user.room,
-                users: getRoomUsers(user.room)
-            });
-        }
-        //io.emit('message', formatMessage(botName, 'A user has left the chat'));
-    });
-
+/** catch 404 and forward to error handler */
+app.use('*', (req, res) => {
+    /*return res.status(404).json({
+        success: false,
+        message: 'API endpoint doesnt exist'
+    })*/
+    res.redirect('/404');
 });
 
-const PORT = 3000; // || process.env.PORT;
 
+/** Create HTTP server. */
+const server = http.createServer(app);
+
+//global.io is equivalent to windows object in browser.
+// But since we don't have windows in NodeJS we use global.io.
+// Whatever we put in global.io is available in the entire application.
+
+/** Create socket connection */
+// assign global.io to socketio.listen(server)
+// (As soon as a port starts listening on the server,
+// sockets starts listening for events happening on that port as well.)
+
+// Run when client connects
+io = socketio(server);
+
+// Every time someone from the front end makes a socket connection,
+// the connection method will be called which will invoke our Websockets class
+// and inside that class the connection method.
+// global.io.on('connection', WebSockets.connection)
+io.on('connection', WebSockets.connection)
+
+
+
+/** Listen on provided port, on all network interfaces. */
 server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`)
-})
+    console.log(`http://localhost:${PORT}`)
+});
+
