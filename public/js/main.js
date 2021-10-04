@@ -8,13 +8,15 @@ const { username, room } = Qs.parse(location.search, {
     // Ignore special character in the url
     ignoreQueryPrefix: true,
 });
-//console.log(username, room);
-const botName = 'Odile Bot';
 
+// console.log(username, room);
+
+//const socket = io();
+// const socket = io('http://localhost:3000');
 const socket = io();
 
 // Join chatroom
-socket.emit('joinRoom', { username, room });
+socket.emit('subscribe', { username, room });
 
 // Get room and users
 socket.on('roomUsers', ({ room, users }) => {
@@ -22,18 +24,38 @@ socket.on('roomUsers', ({ room, users }) => {
     outputUsers(users);
 });
 
-// Message from server
+// Get Message from server
 socket.on('message', (message) => {
-    console.log(message);
+    // console.log(message);
     outputMessage(message);
 
     // Scroll down
     chatMessages.scrollTop = chatMessages.scrollHeight;
 });
+// Get Old Conversation from server
+socket.on('conversation', (oldConversation) => {
+    // console.log(message);
+    outputOldMessage(oldConversation);
 
-// Message submit
+    // Scroll down
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+
+// Get Old conversations from server
+/*socket.on('output', (conversations) => {
+    // console.log(conversations);
+    for (let i=0; i< conversations.length; i++) {
+        outputOldMessage(conversations[i]);
+    }
+
+    // Scroll down
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+});*/
+
+// Message submit from chat-form form
 chatForm.addEventListener('submit', (e) => {
     // prevent default not display a file
+    // don't refresh the page
     e.preventDefault();
 
     // Get message text
@@ -89,15 +111,25 @@ function outputUsers(users) {
         userList.appendChild(li);
     });*/
     userList.innerHTML = `
-        ${users.map(user => `<li>${user.username}</li>`).join('')} 
+        ${users.map(user => `<li>${user.username}</li>`).join('')}
         `;
 }
 
-//Prompt the user before leave chat room
-document.getElementById('leave-btn').addEventListener('click', () => {
-    const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
-    if (leaveRoom) {
-        window.location = '../login.html';
-    } else {
-    }
-});
+// Output old message to DOM
+function outputOldMessage(oldConversation) {
+    const div = document.createElement('div');
+    div.classList.add('message');
+    const p = document.createElement('p');
+    p.classList.add('meta');
+
+    p.innerText = oldConversation.username; //oldConversation.postedByUser;
+    p.innerHTML += ` <span>${oldConversation.date}</span>`;
+    p.innerHTML += ` <span>${oldConversation.time}</span>`;
+    div.appendChild(p);
+    const para = document.createElement('p');
+    para.classList.add('text');
+    para.innerText = oldConversation.text; //oldConversation.message;
+    div.appendChild(para);
+    document.querySelector('.chat-messages').appendChild(div);
+}
+
