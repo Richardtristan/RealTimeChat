@@ -13,7 +13,7 @@
 
 #msg{
     border: none;
-    height: 200%;
+    height: 100rem;
     margin-bottom: 0;
     outline: 0;
     border-radius: 0 0 10px 10px;
@@ -181,9 +181,9 @@
         margin-right: 2%;
     }
     
-    .btn-grad  {
+    .btn-grad , #leave-btn {
    background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
-             .btn-grad {
+             .btn-grad , #leave-btn{
                 margin-top: 2%;
                 margin-bottom: 0;
                 padding: 5px 20px;
@@ -194,11 +194,9 @@
                 color: white;
                 box-shadow: 0 0 5px #eee;
                 border-radius: 10px;
-                
-                
               }
     
-              .btn-grad:hover {
+              .btn-grad:hover , #leave-btn{
                 background-position: right center; /* change the direction of the change here */
                 color: #fff;
                 text-decoration: none;
@@ -268,8 +266,9 @@
            .leave {
                display: flex;
                align-items: center;
-               justify-content: flex-end;
-                margin-right: 5%;
+               justify-content: space-around;
+               margin-right: 5%;
+               flex-wrap: nowrap;
            }
 
            .chat-sidebar{
