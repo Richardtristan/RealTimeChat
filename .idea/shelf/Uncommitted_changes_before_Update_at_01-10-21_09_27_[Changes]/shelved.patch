@@ -1,0 +1,298 @@
+Index: public/css/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');*/\r\n\r\n/*:root {*/\r\n/*    !*--dark-color-a: #667aff;*!*/\r\n/*    --dark-color-a: #40444b;*/\r\n/*    !*--dark-color-b: #7386ff;*!*/\r\n/*    --dark-color-b: #2f3136;*/\r\n/*    !*--light-color: #e6e9ff;*!*/\r\n/*    --light-color: #36393f;*/\r\n/*    --success-color: #5cb85c;*/\r\n/*    --error-color: #d9534f;*/\r\n/*}*/\r\n\r\n/** {*/\r\n/*    box-sizing: border-box;*/\r\n/*    margin: 0;*/\r\n/*    padding: 0;*/\r\n/*    !*adde*!*/\r\n/*    border-radius: 6px;*/\r\n/*    border-inline-end-color: #393d46;*/\r\n/*    border-inline-start-color: #505560;*/\r\n/*    border-block-end-color: #393d46;*/\r\n/*    border-block-start-color: #525866;*/\r\n/*}*/\r\n\r\n/*body {*/\r\n/*    font-family: 'Roboto', sans-serif;*/\r\n/*    font-size: 16px;*/\r\n/*    background: var(--light-color);*/\r\n/*    margin: 20px;*/\r\n/*}*/\r\n\r\n/*ul {*/\r\n/*    list-style: none;*/\r\n/*}*/\r\n\r\n/*a {*/\r\n/*    text-decoration: none;*/\r\n/*}*/\r\n\r\n/*.btn {*/\r\n/*    cursor: pointer;*/\r\n/*    padding: 5px 15px;*/\r\n/*    !*background: var(--light-color);*!*/\r\n/*    background: #B8BABDFF; !*B8BABDFF*!*/\r\n/*    color: var(--dark-color-a);*/\r\n/*    border: 0;*/\r\n/*    font-size: 17px;*/\r\n/*    margin-left: 5px; !*adde*!*/\r\n/*}*/\r\n\r\n/*!* Chat Page *!*/\r\n\r\n/*.chat-container {*/\r\n/*    max-width: 1100px;*/\r\n/*    !*background: #fff;*!*/\r\n/*    background:#40444b;*/\r\n/*    margin: 30px auto;*/\r\n/*    overflow: hidden;*/\r\n/*}*/\r\n\r\n/*.chat-header {*/\r\n/*    background: var(--dark-color-a);*/\r\n/*    color: #fff;*/\r\n/*    border-top-left-radius: 5px;*/\r\n/*    border-top-right-radius: 5px;*/\r\n/*    padding: 15px;*/\r\n/*    display: flex;*/\r\n/*    align-items: center;*/\r\n/*    justify-content: space-between;*/\r\n/*}*/\r\n\r\n/*.chat-main {*/\r\n/*    display: grid;*/\r\n/*    grid-template-columns: 1fr 3fr;*/\r\n/*}*/\r\n/*.register-main {*/\r\n/*    display: grid;*/\r\n/*    grid-template-columns: 1fr 3fr;*/\r\n/*}*/\r\n/*.btn-register {*/\r\n/*    display: flex;*/\r\n/*    justify-content: space-around;*/\r\n/*}*/\r\n\r\n/*.chat-sidebar {*/\r\n/*    background: var(--dark-color-b);*/\r\n/*    color: #fff;*/\r\n/*    padding: 20px 20px 60px;*/\r\n/*    overflow-y: scroll;*/\r\n/*}*/\r\n\r\n/*.chat-sidebar h2 {*/\r\n/*    font-size: 20px;*/\r\n/*    background: rgba(0, 0, 0, 0.1);*/\r\n/*    padding: 10px;*/\r\n/*    margin-bottom: 20px;*/\r\n/*}*/\r\n\r\n/*.chat-sidebar h3 {*/\r\n/*    margin-bottom: 15px;*/\r\n/*}*/\r\n\r\n/*.chat-sidebar ul li {*/\r\n/*    padding: 10px 0;*/\r\n/*}*/\r\n\r\n/*.chat-messages {*/\r\n/*    padding: 30px;*/\r\n/*    max-height: 500px;*/\r\n/*    overflow-y: scroll;*/\r\n/*    background-color: #36393FFF; !*added*!*/\r\n/*}*/\r\n\r\n/*.chat-messages .message {*/\r\n/*    padding: 10px;*/\r\n/*    margin-bottom: 15px;*/\r\n/*    !*background-color: var(--light-color);*!*/\r\n/*    color: #fff; !*added*!*/\r\n/*    border-radius: 5px;*/\r\n/*    overflow-wrap: break-word;*/\r\n/*}*/\r\n\r\n/*.chat-messages .message .meta {*/\r\n/*    font-size: 15px;*/\r\n/*    font-weight: bold;*/\r\n/*    !*color: var(--dark-color-b);*!*/\r\n/*    color: #36aaf3; !*added*!*/\r\n/*    opacity: 0.7;*/\r\n/*    margin-bottom: 7px;*/\r\n/*}*/\r\n/*.chat-messages .message .bot {*/\r\n/*    font-size: 15px;*/\r\n/*    font-weight: bold;*/\r\n/*    !*color: var(--dark-color-b);*!*/\r\n/*    color: #d5155f;*/\r\n/*    opacity: 0.7;*/\r\n/*    margin-bottom: 7px;*/\r\n/*}*/\r\n\r\n/*.chat-messages .message .meta span {*/\r\n/*    !*color: #777;*!*/\r\n/*    color: #9b9898; !*added*!*/\r\n/*}*/\r\n/*.chat-messages .message .bot span {*/\r\n/*    !*color: #777;*!*/\r\n/*    color: #9b9898; !*added*!*/\r\n/*}*/\r\n\r\n/*.chat-form-container {*/\r\n/*    padding: 20px 30px;*/\r\n/*    background-color: var(--dark-color-a);*/\r\n/*}*/\r\n\r\n/*.chat-form-container form {*/\r\n/*    display: flex;*/\r\n/*}*/\r\n\r\n/*.chat-form-container input[type='text'] {*/\r\n/*    font-size: 16px;*/\r\n/*    padding: 5px;*/\r\n/*    height: 40px;*/\r\n/*    flex: 1;*/\r\n/*    background-color: #40444BFF; !*added*!*/\r\n/*    color: white;*/\r\n/*}*/\r\n/*.chat-form-container input:focus {*/\r\n/*    outline: none !important;*/\r\n/*    !*border:1px solid #0a0909;*/\r\n/*    box-shadow: 0 0 10px #719ECE;*!*/\r\n/*}*/\r\n\r\n/*input#username {*/\r\n/*    outline: none !important;*/\r\n/*}*/\r\n\r\n/*!* Join Page *!*/\r\n/*.join-container {*/\r\n/*    max-width: 500px;*/\r\n/*    margin: 80px auto;*/\r\n/*    color: #fff;*/\r\n/*}*/\r\n\r\n/*.join-header {*/\r\n/*    text-align: center;*/\r\n/*    padding: 20px;*/\r\n/*    background: var(--dark-color-a);*/\r\n/*    border-top-left-radius: 5px;*/\r\n/*    border-top-right-radius: 5px;*/\r\n/*}*/\r\n\r\n/*.join-main {*/\r\n/*    padding: 30px 40px;*/\r\n/*    background: var(--dark-color-b);*/\r\n/*}*/\r\n\r\n/*.join-main p {*/\r\n/*    margin-bottom: 20px;*/\r\n/*}*/\r\n\r\n/*.join-main .form-control {*/\r\n/*    margin-bottom: 20px;*/\r\n/*}*/\r\n\r\n/*.join-main label {*/\r\n/*    display: block;*/\r\n/*    margin-bottom: 5px;*/\r\n/*}*/\r\n\r\n/*.join-main input[type='text'] {*/\r\n/*    font-size: 16px;*/\r\n/*    padding: 5px;*/\r\n/*    height: 40px;*/\r\n/*    width: 100%;*/\r\n/*}*/\r\n\r\n/*.join-main select {*/\r\n/*    font-size: 16px;*/\r\n/*    padding: 5px;*/\r\n/*    height: 40px;*/\r\n/*    width: 100%;*/\r\n/*}*/\r\n\r\n/*.join-main .btn {*/\r\n/*    margin-top: 20px;*/\r\n/*    width: 100%;*/\r\n/*}*/\r\n\r\n/*@media (max-width: 700px) {*/\r\n/*    .chat-main {*/\r\n/*        display: block;*/\r\n/*    }*/\r\n\r\n/*    .chat-sidebar {*/\r\n/*        display: none;*/\r\n/*    }*/\r\n/*}*/\r\n\r\n        #chat-form {\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-items: center;\r\n    }\r\n    .body-index {\r\n        height: 100% !important;\r\n        margin: 0 !important;\r\n        padding: 0 !important;\r\n        background-image: url('/img/bg.png');\r\n        background-repeat: no-repeat;\r\n        background-size: cover;\r\n        position:relative;\r\n        display: grid;\r\n        grid-template-columns: 1fr 2.1fr 1fr;\r\n        grid-template-rows: 0.2fr 1fr 0.2fr;\r\n        gap: 0px 0px;\r\n        grid-template-areas:\r\n        \". . .\"\r\n        \". text .\"\r\n        \". . .\";\r\n    }\r\n    h1{\r\n        font-family: 'Gemunu Libre', sans-serif;\r\n    }\r\n    .join-container, .chat-container {\r\n        height: auto;\r\n        text-align: center;\r\n        background: whitesmoke;\r\n        opacity: 0.75;\r\n        flex-direction: column;\r\n        border-radius: 10px;\r\n        grid-area: text;\r\n        margin: auto;\r\n        /*padding-top: 3%;*/\r\n    }\r\n    .all{\r\n        display: flex;\r\n        flex-direction: row;\r\n        flex-wrap: wrap;\r\n        align-content: stretch;\r\n        justify-content: space-evenly;\r\n        align-items: flex-start;\r\n    }\r\n    .join-main, .chat-main{\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-content: space-around;\r\n        justify-content: space-between;\r\n        align-items: stretch;\r\n    \r\n    }\r\n    input{\r\n        margin-bottom: 2%;\r\n        margin-top: 2%;\r\n        width: 60%;\r\n        height: auto;\r\n    }\r\n    button{\r\n        margin-bottom: 2%;\r\n        margin-top: 3%;\r\n    \r\n    }\r\n    br{\r\n        margin-bottom: 13%;\r\n    }\r\n    a{\r\n        margin-bottom: 2%;\r\n        margin-top: 2%;\r\n    }\r\n    label{\r\n        font-weight: bold;\r\n        margin-right: 2%;\r\n    }\r\n    \r\n    .btn-grad {background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}\r\n             .btn-grad {\r\n                margin: 10px;\r\n                padding: 15px 45px;\r\n                text-align: center;\r\n                text-transform: uppercase;\r\n                transition: 0.5s;\r\n                background-size: 200% auto;\r\n                color: white;\r\n                box-shadow: 0 0 20px #eee;\r\n                border-radius: 10px;\r\n                display: block;\r\n              }\r\n    \r\n              .btn-grad:hover {\r\n                background-position: right center; /* change the direction of the change here */\r\n                color: #fff;\r\n                text-decoration: none;\r\n              }\r\n    \r\n              .btn-join{\r\n                  display: flex;\r\n                  justify-content: space-around;\r\n                  margin-top: 2%;\r\n              }\r\n              .img-logo{\r\n                width: auto;\r\n                max-width: 25%;             \r\n                  \r\n              }\r\n    \r\n              .body-register {\r\n                height: 100% !important;\r\n                margin: 0 !important;\r\n                padding: 0 !important;\r\n                background-image: url('/img/bg.png');\r\n                background-repeat: no-repeat;\r\n                background-size: cover;\r\n                position:relative;\r\n                display: grid;\r\n                grid-template-columns: 1fr 2.1fr 1fr;\r\n                grid-template-rows: 0.75fr 1fr 0.75fr;\r\n                gap: 0px 0px;\r\n                grid-template-areas:\r\n                \". . .\"\r\n                \". text .\"\r\n                \". . .\";\r\n            }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/public/css/style.css b/public/css/style.css
+--- a/public/css/style.css	(revision 803358d9cdcf12437c1381cc2a1832ab560d76f5)
++++ b/public/css/style.css	(date 1633073178936)
+@@ -236,126 +236,124 @@
+ /*    }*/
+ /*}*/
+ 
+-        #chat-form {
+-        display: flex;
+-        flex-direction: column;
+-        align-items: center;
+-    }
+-    .body-index {
+-        height: 100% !important;
+-        margin: 0 !important;
+-        padding: 0 !important;
+-        background-image: url('/img/bg.png');
+-        background-repeat: no-repeat;
+-        background-size: cover;
+-        position:relative;
+-        display: grid;
+-        grid-template-columns: 1fr 2.1fr 1fr;
+-        grid-template-rows: 0.2fr 1fr 0.2fr;
+-        gap: 0px 0px;
+-        grid-template-areas:
+-        ". . ."
+-        ". text ."
+-        ". . .";
+-    }
+-    h1{
+-        font-family: 'Gemunu Libre', sans-serif;
+-    }
+-    .join-container, .chat-container {
+-        height: auto;
+-        text-align: center;
+-        background: whitesmoke;
+-        opacity: 0.75;
+-        flex-direction: column;
+-        border-radius: 10px;
+-        grid-area: text;
+-        margin: auto;
+-        /*padding-top: 3%;*/
+-    }
+-    .all{
+-        display: flex;
+-        flex-direction: row;
+-        flex-wrap: wrap;
+-        align-content: stretch;
+-        justify-content: space-evenly;
+-        align-items: flex-start;
+-    }
+-    .join-main, .chat-main{
+-        display: flex;
+-        flex-direction: column;
+-        align-content: space-around;
+-        justify-content: space-between;
+-        align-items: stretch;
+-    
+-    }
+-    input{
+-        margin-bottom: 2%;
+-        margin-top: 2%;
+-        width: 60%;
+-        height: auto;
+-    }
+-    button{
+-        margin-bottom: 2%;
+-        margin-top: 3%;
+-    
+-    }
+-    br{
+-        margin-bottom: 13%;
+-    }
+-    a{
+-        margin-bottom: 2%;
+-        margin-top: 2%;
+-    }
+-    label{
+-        font-weight: bold;
+-        margin-right: 2%;
+-    }
+-    
+-    .btn-grad {background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
+-             .btn-grad {
+-                margin: 10px;
+-                padding: 15px 45px;
+-                text-align: center;
+-                text-transform: uppercase;
+-                transition: 0.5s;
+-                background-size: 200% auto;
+-                color: white;
+-                box-shadow: 0 0 20px #eee;
+-                border-radius: 10px;
+-                display: block;
+-              }
+-    
+-              .btn-grad:hover {
+-                background-position: right center; /* change the direction of the change here */
+-                color: #fff;
+-                text-decoration: none;
+-              }
+-    
+-              .btn-join{
+-                  display: flex;
+-                  justify-content: space-around;
+-                  margin-top: 2%;
+-              }
+-              .img-logo{
+-                width: auto;
+-                max-width: 25%;             
+-                  
+-              }
+-    
+-              .body-register {
+-                height: 100% !important;
+-                margin: 0 !important;
+-                padding: 0 !important;
+-                background-image: url('/img/bg.png');
+-                background-repeat: no-repeat;
+-                background-size: cover;
+-                position:relative;
+-                display: grid;
+-                grid-template-columns: 1fr 2.1fr 1fr;
+-                grid-template-rows: 0.75fr 1fr 0.75fr;
+-                gap: 0px 0px;
+-                grid-template-areas:
++#chat-form {
++    display: flex;
++    flex-direction: column;
++    align-items: center;
++}
++
++
++
++h1 {
++    font-family: 'Gemunu Libre', sans-serif;
++}
++
++.join-container, .chat-container {
++    height: auto;
++    text-align: center;
++    background: whitesmoke;
++    opacity: 0.75;
++    flex-direction: column;
++    border-radius: 10px;
++    grid-area: text;
++    margin: auto;
++    /*padding-top: 3%;*/
++}
++
++.all {
++    display: flex;
++    flex-direction: row;
++    flex-wrap: wrap;
++    align-content: stretch;
++    justify-content: space-evenly;
++    align-items: flex-start;
++}
++
++.join-main, .chat-main {
++    display: flex;
++    flex-direction: column;
++    align-content: space-around;
++    justify-content: space-between;
++    align-items: stretch;
++
++}
++
++input {
++    margin-bottom: 2%;
++    margin-top: 2%;
++    width: 60%;
++    height: auto;
++}
++
++button {
++    margin-bottom: 2%;
++    margin-top: 3%;
++
++}
++
++br {
++    margin-bottom: 13%;
++}
++
++a {
++    margin-bottom: 2%;
++    margin-top: 2%;
++}
++
++label {
++    font-weight: bold;
++    margin-right: 2%;
++}
++
++.btn-grad {
++    background-image: linear-gradient(to right, #2b5876 0%, #4e4376 51%, #2b5876 100%)
++}
++
++.btn-grad {
++    margin: 10px;
++    padding: 15px 45px;
++    text-align: center;
++    text-transform: uppercase;
++    transition: 0.5s;
++    background-size: 200% auto;
++    color: white;
++    box-shadow: 0 0 20px #eee;
++    border-radius: 10px;
++    display: block;
++}
++
++.btn-grad:hover {
++    background-position: right center; /* change the direction of the change here */
++    color: #fff;
++    text-decoration: none;
++}
++
++.btn-join {
++    display: flex;
++    justify-content: space-around;
++    margin-top: 2%;
++}
++
++.img-logo {
++    width: auto;
++    max-width: 25%;
++
++}
++
++.body-register {
++    height: 100% !important;
++    margin: 0 !important;
++    padding: 0 !important;
++    background-image: url('/img/bg.png');
++    background-repeat: no-repeat;
++    background-size: cover;
++    position: relative;
++    display: grid;
++    grid-template-columns: 1fr 2.1fr 1fr;
++    grid-template-rows: 0.75fr 1fr 0.75fr;
++    gap: 0px 0px;
++    grid-template-areas:
+                 ". . ."
+                 ". text ."
+                 ". . .";
+-            }
+\ No newline at end of file
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"72265a71-855d-48ff-b2c9-db743d5a47bc\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/public/img/bg.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/chat.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/chat.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/css/style.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/css/style.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/index.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/register.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/register.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1ylDaVFennNdrNuhwJxqazmE3rR\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/public/img\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\git\\RealTimeChat\\public\\img\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"72265a71-855d-48ff-b2c9-db743d5a47bc\" name=\"Changes\" comment=\"\" />\r\n      <created>1632817345827</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1632817345827</updated>\r\n      <workItem from=\"1632817347283\" duration=\"24000\" />\r\n      <workItem from=\"1632817391608\" duration=\"11774000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 803358d9cdcf12437c1381cc2a1832ab560d76f5)
++++ b/.idea/workspace.xml	(date 1633072948150)
+@@ -5,11 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="72265a71-855d-48ff-b2c9-db743d5a47bc" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/public/img/bg.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/chat.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/register.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -50,7 +47,8 @@
+       <option name="presentableId" value="Default" />
+       <updated>1632817345827</updated>
+       <workItem from="1632817347283" duration="24000" />
+-      <workItem from="1632817391608" duration="11774000" />
++      <workItem from="1632817391608" duration="12659000" />
++      <workItem from="1633072643288" duration="303000" />
+     </task>
+     <servers />
+   </component>
+@@ -67,5 +65,6 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+ </project>
+\ No newline at end of file
