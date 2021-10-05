@@ -11,7 +11,7 @@
 ## Participants of project : 
  
 * Tristan RICHARD
-* Abdelilah
+* Abdelilah BENGHADDA
 * Mathieu DERIEUX
 * Marianne
  
