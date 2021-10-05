@@ -39,7 +39,8 @@ router
     })
     .get('/chat', redirectLogin, (req, res) => {
         const { username, room } = req.session
-        res.redirect(`/chat.html?username=${username}&room=${room}`);
+        //res.redirect(`/chat.html?username=${username}&room=${room}`);
+        res.render('chat', {username: username, room: room});
 
     })
     .get('/login', redirectChat, (req, res) => {
