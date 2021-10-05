@@ -13,7 +13,7 @@
 * Tristan RICHARD
 * Abdelilah BENGHADDA
 * Mathieu DERIEUX
-* Marianne Auquier
+* Marianne AUQUIER
  
 # Type of project : Chat with NodeJs
  
