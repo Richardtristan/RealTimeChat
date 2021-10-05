@@ -61,6 +61,12 @@ app.use( session({
     }
 }));
 
+// using ejs
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+//app.set('views', __dirname);
+app.set('views', 'public');
+
 //app.use(express.json());
 app.use(bodyParser.json());
 //app.use(express.urlencoded({ extended: true }));
