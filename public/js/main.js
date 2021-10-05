@@ -4,10 +4,13 @@ const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
 // Get username and room from URL
-const { username, room } = Qs.parse(location.search, {
-    // Ignore special character in the url
-    ignoreQueryPrefix: true,
-});
+//const { username, room } = Qs.parse(location.search, {
+//    // Ignore special character in the url
+//    ignoreQueryPrefix: true,
+//});
+
+console.log(username);
+console.log(room);
 
 // console.log(username, room);
 
