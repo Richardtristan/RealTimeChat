@@ -12,7 +12,7 @@
  
 * Tristan RICHARD
 * Abdelilah
-* Mathieu
+* Mathieu Derieux
 * Marianne
  
 # Type of project : Chat with NodeJs
